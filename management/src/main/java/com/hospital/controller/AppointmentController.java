@@ -3,7 +3,6 @@ package com.hospital.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import com.hospital.service.AppointmentService;
-import com.hospital.model.Appointment;
 import com.hospital.dto.AppointmentRequestDTO;
 import com.hospital.dto.AppointmentResponseDTO;
 
@@ -34,6 +33,13 @@ public class AppointmentController {
             @PathVariable Long patientId) {
 
         return appointmentService.getAppointmentsByPatient(patientId);
+    }
+
+    @GetMapping("/doctor/{doctorId}")
+    public List<AppointmentResponseDTO> getDoctorAppointments(
+            @PathVariable Long doctorId) {
+
+        return appointmentService.getAppointmentsByDoctor(doctorId);
     }
 
     @PutMapping("/{appointmentId}/approve")

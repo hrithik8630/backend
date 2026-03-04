@@ -1,7 +1,6 @@
 package com.hospital.service;
 
 import com.hospital.dto.AppointmentResponseDTO;
-import com.hospital.model.Appointment;
 
 import java.util.List;
 
@@ -15,6 +14,8 @@ public interface AppointmentService {
     );
 
     List<AppointmentResponseDTO> getAppointmentsByPatient(Long patientId);
+
+    List<AppointmentResponseDTO> getAppointmentsByDoctor(Long doctorId);
 
     AppointmentResponseDTO approveAppointment(Long appointmentId);
 }
